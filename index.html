@@ -12,6 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230D4A37'/><path d='M50 22v56M22 50h56' stroke='%23F4EFE6' stroke-width='15' stroke-linecap='round'/></svg>">
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
 
 <!-- ══════════ TOPBAR ══════════ -->
 <div class="topbar">
@@ -41,7 +42,7 @@
   </nav>
 
   <div class="header__actions">
-    <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language" aria-pressed="false">
       <span class="lang-toggle__opt is-active" data-lang="en">ENG</span><span class="lang-toggle__sep">/</span><span class="lang-toggle__opt" data-lang="np">नेपाली</span>
     </button>
     <a class="btn-emergency" href="tel:+977021570103" data-en="Emergency · 021-570103" data-np="आपतकालीन · ०२१-५७०१०३">Emergency · 021-570103</a>
@@ -90,7 +91,7 @@
 
       <figure class="hero__photo" data-reveal>
         <div class="hero__photo-frame" aria-hidden="true"></div>
-        <img src="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-1_oqimzk6.jpg" alt="Koshi Hospital building on Rangeli Road, Biratnagar" width="900" height="1200" fetchpriority="high">
+        <img src="assets/img/hospital-1.jpg" alt="Koshi Hospital building on Rangeli Road, Biratnagar" width="900" height="1200" fetchpriority="high">
         <figcaption><span data-en="Koshi Hospital — Rangeli Road, Biratnagar" data-np="कोशी अस्पताल — रंगेली रोड, विराटनगर">Koshi Hospital — Rangeli Road, Biratnagar</span><span class="hero__photo-credit">Hospital archive</span></figcaption>
       </figure>
     </div>
@@ -115,6 +116,11 @@
         <p data-reveal data-en="Every department — from the emergency ward to the pharmacy — runs on a simple belief: that quality healthcare is a right, not a privilege. Senior doctors, nurses and support staff work in shifts around the clock so that the hospital never closes its doors." data-np="आपतकालीन वार्डदेखि फार्मेसीसम्म — हरेक विभागलाई एउटै विश्वास चलाउँछ: गुणस्तरीय स्वास्थ्य सेवा अधिकार हो, विशेषाधिकार होइन। वरिष्ठ डाक्टर, नर्स र सहायक कर्मचारीहरूले दिनरात पालैपालो काम गर्छन् ताकि अस्पतालको ढोका कहिल्यै बन्द नहोस्।">Every department — from the emergency ward to the pharmacy — runs on a simple belief: that quality healthcare is a right, not a privilege. Senior doctors, nurses and support staff work in shifts around the clock so that the hospital never closes its doors.</p>
       </div>
 
+      <blockquote class="pullquote" data-reveal>
+        <p data-en="“Quality healthcare is a right, not a privilege.”" data-np="“गुणस्तरीय स्वास्थ्य सेवा अधिकार हो, विशेषाधिकार होइन।”">“Quality healthcare is a right, not a privilege.”</p>
+        <cite data-en="— Koshi Hospital, Citizen Charter" data-np="— कोशी अस्पताल, नागरिक बडापत्र">— Koshi Hospital, Citizen Charter</cite>
+      </blockquote>
+
       <dl class="facts" data-reveal>
         <div><dt data-en="Institution" data-np="संस्था">Institution</dt><dd data-en="Government of Nepal" data-np="नेपाल सरकार">Government of Nepal</dd></div>
         <div><dt data-en="Ministry" data-np="मन्त्रालय">Ministry</dt><dd data-en="Health & Population" data-np="स्वास्थ्य तथा जनसंख्या">Health & Population</dd></div>
@@ -123,7 +129,7 @@
       </dl>
 
       <figure class="about__photo" data-reveal>
-        <img src="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-2_pghxt0c.jpg" alt="Inside the Koshi Hospital campus" width="900" height="675" loading="lazy">
+        <img src="assets/img/hospital-2.jpg" alt="Inside the Koshi Hospital campus" width="900" height="675" loading="lazy">
         <figcaption><span data-en="The hospital campus, Biratnagar" data-np="अस्पताल परिसर, विराटनगर">The hospital campus, Biratnagar</span></figcaption>
       </figure>
     </div>
@@ -144,7 +150,7 @@
             <span class="svc-index__arrow" aria-hidden="true">→</span>
           </a>
         </li>
-        <li data-reveal data-img="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-1_oqimzk6.jpg">
+        <li data-reveal data-img="assets/img/hospital-2.jpg">
           <a href="#visit">
             <span class="svc-index__num">02</span>
             <span class="svc-index__name" data-en="Surgical" data-np="सर्जिकल">Surgical</span>
@@ -153,7 +159,7 @@
             <span class="svc-index__arrow" aria-hidden="true">→</span>
           </a>
         </li>
-        <li data-reveal data-img="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-2_pghxt0c.jpg">
+        <li data-reveal data-img="assets/img/hospital-1.jpg">
           <a href="#visit">
             <span class="svc-index__num">03</span>
             <span class="svc-index__name" data-en="ICU / HDU" data-np="आइसीयु / एचडीयु">ICU / HDU</span>
@@ -162,7 +168,7 @@
             <span class="svc-index__arrow" aria-hidden="true">→</span>
           </a>
         </li>
-        <li data-reveal data-img="https://giwmscdnone.gov.np/media/albums/WhatsApp%20Image%202026-06-01%20at%208.38.15%20PM_qaCZqwxYpS_7fAL9bzzhF_9ijphsa.jpeg">
+        <li data-reveal data-img="assets/img/blood-bank.jpg">
           <a href="#visit">
             <span class="svc-index__num">04</span>
             <span class="svc-index__name" data-en="Pharmacy" data-np="फार्मेसी">Pharmacy</span>
@@ -180,7 +186,7 @@
             <span class="svc-index__arrow" aria-hidden="true">→</span>
           </a>
         </li>
-        <li data-reveal data-img="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-1_oqimzk6.jpg">
+        <li data-reveal data-img="assets/img/hospital-2.jpg">
           <a href="#visit">
             <span class="svc-index__num">06</span>
             <span class="svc-index__name" data-en="Pediatric" data-np="पेडियाट्रिक">Pediatric</span>
@@ -214,13 +220,13 @@
           <p class="doc__role" data-en="Chief Medical Superintendent" data-np="प्रमुख मेडिकल सुपरिटेन्डेन्ट">Chief Medical Superintendent</p>
         </article>
         <article class="doc" data-reveal>
-          <div class="doc__photo"><img src="https://giwmscdnone.gov.np/media/albums/manju%20did_Upkiebrgzr_yczfr0w.jpg" alt="Manju Yadav, Matron" width="600" height="800" loading="lazy"></div>
+          <div class="doc__photo doc__photo--mono doc__photo--mono--2"><span>मञ्जु<br>यादव</span></div>
           <h3 class="doc__name">Manju Yadav</h3>
           <p class="doc__role" data-en="Matron" data-np="मेट्रन">Matron</p>
           <a class="doc__tel" href="tel:9852081034">9852081034</a>
         </article>
         <article class="doc" data-reveal>
-          <div class="doc__photo"><img src="https://giwmscdnone.gov.np/media/albums/Gajendra%20yadav_IpByghat3o_ijez8by.PNG" alt="Gajendra Prasad Yadav, Information Officer" width="600" height="800" loading="lazy"></div>
+          <div class="doc__photo doc__photo--mono doc__photo--mono--3"><span>गजेन्द्र<br>यादव</span></div>
           <h3 class="doc__name">Gajendra Prasad Yadav</h3>
           <p class="doc__role" data-en="Information Officer" data-np="सूचना अधिकारी">Information Officer</p>
           <a class="doc__tel" href="tel:9842139969">9842139969</a>
@@ -298,7 +304,7 @@
             <label for="fMsg" data-en="Message (optional)" data-np="सन्देश (ऐच्छिक)">Message (optional)</label>
             <textarea id="fMsg" rows="3" placeholder="Briefly describe your concern..."></textarea>
           </div>
-          <button type="submit" class="btn-solid btn-block" data-en="Request appointment" data-np="अपोइन्टमेन्ट अनुरोध गर्नुहोस्">Request appointment</button>
+          <button type="submit" class="btn-solid btn-block" id="apptSubmit"><span data-en="Request appointment" data-np="अपोइन्टमेन्ट अनुरोध गर्नुहोस्">Request appointment</span></button>
           <p class="appt__note" data-en="The hospital will confirm your slot by phone." data-np="अस्पतालले फोनमा पुष्टि गर्नेछ।">The hospital will confirm your slot by phone.</p>
           <p class="appt__success" id="formSuccess" role="status">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="m8 12.5 2.6 2.6L16 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -315,19 +321,19 @@
     <div class="section__body">
       <div class="gallery__track">
         <figure class="gcard" data-reveal>
-          <img src="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-3_qs0wl9q.jpg" alt="Koshi Hospital building" width="900" height="1200" loading="lazy">
+          <div class="gcard__img"><img src="assets/img/hospital-1.jpg" alt="Koshi Hospital building" width="900" height="1200" loading="lazy"></div>
           <figcaption data-en="Koshi Hospital — main building" data-np="कोशी अस्पताल — मुख्य भवन">Koshi Hospital — main building</figcaption>
         </figure>
         <figure class="gcard" data-reveal>
-          <img src="https://giwmscdnone.gov.np/media/albums/WhatsApp%20Image%202026-06-01%20at%208.38.15%20PM_qaCZqwxYpS_7fAL9bzzhF_9ijphsa.jpeg" alt="Blood Bank at Koshi Hospital" width="900" height="1200" loading="lazy">
+          <div class="gcard__img"><img src="assets/img/blood-bank.jpg" alt="Blood Bank at Koshi Hospital" width="900" height="1200" loading="lazy"></div>
           <figcaption data-en="Blood Bank" data-np="ब्लड बैंक">Blood Bank</figcaption>
         </figure>
         <figure class="gcard" data-reveal>
-          <img src="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-1_oqimzk6.jpg" alt="Koshi Hospital campus view" width="900" height="1200" loading="lazy">
+          <div class="gcard__img"><img src="assets/img/hospital-2.jpg" alt="Koshi Hospital campus view" width="900" height="1200" loading="lazy"></div>
           <figcaption data-en="Campus view" data-np="परिसर दृश्य">Campus view</figcaption>
         </figure>
         <figure class="gcard" data-reveal>
-          <img src="https://giwmscdnone.gov.np/media/carousels/koshi-hospital-2_pghxt0c.jpg" alt="Hospital grounds" width="900" height="675" loading="lazy">
+          <div class="gcard__img"><img src="assets/img/hospital-1.jpg" alt="Hospital grounds" width="900" height="675" loading="lazy"></div>
           <figcaption data-en="Hospital grounds" data-np="अस्पताल परिसर">Hospital grounds</figcaption>
         </figure>
       </div>
@@ -376,7 +382,7 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="footer__top">
-      <img class="footer__emblem" src="https://giwmscdnone.gov.np/static/assets/image/Emblem_of_Nepal.png" alt="Emblem of Nepal" width="120" height="150" loading="lazy">
+      <img class="footer__emblem" src="assets/img/emblem.png" alt="Emblem of Nepal" width="120" height="150" loading="lazy">
       <p class="footer__est" data-en="Est. under the Ministry of Health & Population — serving Biratnagar since generations." data-np="स्वास्थ्य तथा जनसंख्या मन्त्रालय अन्तर्गत — पुस्तादेखि विराटनगरको सेवामा।">Est. under the Ministry of Health & Population — serving Biratnagar since generations.</p>
     </div>
     <p class="footer__word" aria-hidden="true">Koshi Hospital</p>
@@ -408,6 +414,19 @@
     </div>
   </div>
 </footer>
+
+<!-- ══════════ TWEAKS ══════════ -->
+<div class="tweaks" id="tweaks">
+  <button class="tweaks__toggle" id="tweaksToggle" aria-expanded="false" aria-label="Tweaks panel">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8h10M18 8h2M4 16h2M10 16h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="8" r="2.2" stroke="currentColor" stroke-width="1.8"/><circle cx="8" cy="16" r="2.2" stroke="currentColor" stroke-width="1.8"/></svg>
+  </button>
+  <div class="tweaks__panel" role="group" aria-label="Tweaks">
+    <h2>Tweaks</h2>
+    <button class="tweaks__opt" data-tweak="motion" aria-pressed="true"><span>Motion</span><i>On</i></button>
+    <button class="tweaks__opt" data-tweak="scale" aria-pressed="false"><span>Type scale</span><i>Medium</i></button>
+    <button class="tweaks__opt" data-tweak="photo" aria-pressed="false"><span>Photos</span><i>Color</i></button>
+  </div>
+</div>
 
 <button class="to-top" id="toTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>

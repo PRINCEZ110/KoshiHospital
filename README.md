@@ -9,12 +9,14 @@ Single-page static website built with plain HTML, CSS, and vanilla JavaScript. N
 ## Features
 
 - Editorial design with Fraunces serif typography and warm paper aesthetic
-- Real photography from the hospital's official archive
+- Real photography from the hospital's official archive (stored locally in `assets/img/`)
 - Bilingual interface — English / नेपाली toggle
 - Services index with hover photo previews
 - Official notice board with tender PDF links
-- Appointment request form
-- Fully responsive, keyboard accessible, reduced-motion support
+- Appointment request form with validation, loading, and success states
+- Tweaks panel — motion on/off, type scale, photo color/duotone treatment (persisted)
+- Full interaction states — hover / pressed / focus / disabled / loading
+- Fully responsive (media + container queries), keyboard accessible, reduced-motion support
 
 ## Tech Stack
 

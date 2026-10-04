@@ -3,15 +3,19 @@
    Warm paper · serif type · hairline rules · real photography
    ═══════════════════════════════════════════════════════════════ */
 :root{
-  --paper:#F4EFE6;
-  --paper-2:#ECE5D6;
-  --ink:#14211B;
-  --ink-soft:#3C4A42;
-  --green:#0D4A37;
-  --red:#C8102E;
-  --muted:#6B766E;
-  --line:rgba(20,33,27,.18);
-  --line-soft:rgba(20,33,27,.1);
+  --paper:oklch(95.5% .018 87);
+  --paper-2:oklch(92% .022 85);
+  --paper-hover:oklch(93% .02 85);
+  --ink:oklch(17.5% .028 158);
+  --ink-soft:oklch(31% .025 155);
+  --ink-hover:oklch(26% .03 158);
+  --green:oklch(31% .075 158);
+  --green-hover:oklch(26% .07 158);
+  --red:oklch(48% .19 25);
+  --red-hover:oklch(42% .18 25);
+  --muted:oklch(48% .02 150);
+  --line:oklch(17.5% .028 158 / .18);
+  --line-soft:oklch(17.5% .028 158 / .1);
   --serif:"Fraunces","Noto Serif Devanagari",serif;
   --sans:"Space Grotesk","Noto Sans Devanagari",sans-serif;
   --ease:cubic-bezier(.22,.9,.28,1);
@@ -465,11 +469,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .to-top svg{width:20px;height:20px}
 
 /* ───────── REVEAL SYSTEM ───────── */
-[data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-[data-reveal].is-in{opacity:1;transform:none}
-.hero__line>span{transform:translateY(110%);transition:transform 1.1s var(--ease)}
-.hero__line.is-in>span{transform:none}
-.hero__photo[data-reveal]{transform:translateY(40px) scale(.98)}
+html.js [data-reveal]{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.js [data-reveal].is-in{opacity:1;transform:none}
+html.js .hero__line>span{transform:translateY(110%);transition:transform 1.1s var(--ease)}
+html.js .hero__line.is-in>span{transform:none}
+html.js .hero__photo[data-reveal]{transform:translateY(40px) scale(.98)}
 
 /* ───────── RESPONSIVE ───────── */
 @media(max-width:1024px){
@@ -516,6 +520,129 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   html{scroll-behavior:auto}
-  [data-reveal]{opacity:1;transform:none}
-  .hero__line>span{transform:none}
+  html.js [data-reveal]{opacity:1;transform:none}
+  html.js .hero__line>span{transform:none}
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   ENHANCEMENT LAYER — states, tweaks, stun moments
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ───────── SKIP LINK ───────── */
+.skip-link{
+  position:fixed;top:-64px;left:16px;z-index:200;
+  background:var(--ink);color:var(--paper);padding:12px 22px;border-radius:0 0 12px 12px;
+  font-size:.85rem;font-weight:600;transition:top .3s var(--ease);
+}
+.skip-link:focus{top:0}
+
+/* ───────── PROSE ───────── */
+p,.facts dd,.hours dt,.hours dd,.contact-list li,.notice-list__text,
+.svc-index__desc,.ilink,.footer__cols a,.footer__cols span,.pullquote p{text-wrap:pretty}
+
+/* ───────── PRESSED / ACTIVE STATES ───────── */
+.btn-solid:active{transform:translateY(1px) scale(.98);background:var(--red-hover)}
+.btn-line:active{color:var(--red);border-color:var(--red)}
+.btn-emergency:active{transform:scale(.97)}
+.ccard:active{transform:translateX(4px)}
+.ilink:active{padding-left:8px}
+.index-nav a:active{color:var(--red)}
+.doc__tel:active{color:var(--ink)}
+.to-top:active{transform:scale(.92)}
+
+/* ───────── FORM LOADING STATE ───────── */
+.btn-solid.is-loading{pointer-events:none;opacity:.85}
+.btn-solid.is-loading::before{
+  content:"";width:15px;height:15px;flex:none;border-radius:50%;
+  border:2px solid rgba(244,239,230,.35);border-top-color:var(--paper);
+  animation:spin .7s linear infinite;
+}
+.btn-solid:disabled{opacity:.5;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ───────── PULL QUOTE ───────── */
+.pullquote{
+  margin:52px 0;padding:36px 0 36px 36px;border-left:3px solid var(--red);
+}
+.pullquote p{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.3;letter-spacing:-.01em;
+}
+.pullquote cite{
+  display:block;margin-top:16px;font-style:normal;
+  font-size:.7rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ───────── GALLERY MASK REVEAL ───────── */
+.gcard__img{display:block;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path 1.1s var(--ease)}
+.gcard.is-in .gcard__img{clip-path:inset(0 0 -1% 0)}
+.gcard__img img{transition:transform 1.2s var(--ease),filter .5s}
+.gcard.is-in .gcard__img img{transform:scale(1.02)}
+.gcard:hover .gcard__img img{transform:scale(1.06)}
+
+/* ───────── STATS BLEND HOVER ───────── */
+.stat{position:relative;overflow:hidden}
+.stat::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(420px 200px at 50% 0%,rgba(244,239,230,.4),transparent 70%);
+  mix-blend-mode:soft-light;opacity:0;transition:opacity .6s;
+}
+.stat:hover::after{opacity:1}
+
+/* ───────── TWEAKS PANEL ───────── */
+.tweaks{position:fixed;right:24px;bottom:24px;z-index:85}
+.tweaks__toggle{
+  width:46px;height:46px;display:grid;place-items:center;border-radius:50%;
+  background:var(--ink);color:var(--paper);
+  box-shadow:0 10px 26px -10px rgba(20,33,27,.5);
+  transition:background .3s,transform .3s var(--ease);
+}
+.tweaks__toggle:hover{background:var(--red);transform:rotate(15deg)}
+.tweaks__toggle svg{width:20px;height:20px}
+.tweaks__panel{
+  position:absolute;right:0;bottom:58px;width:232px;
+  background:var(--ink);color:var(--paper);border-radius:16px;
+  padding:18px;box-shadow:0 24px 50px -18px rgba(20,33,27,.55);
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:.35s var(--ease);
+}
+.tweaks.is-open .tweaks__panel{opacity:1;visibility:visible;transform:none}
+.tweaks__panel h2{
+  font-size:.66rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(244,239,230,.55);margin-bottom:12px;
+}
+.tweaks__opt{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;
+  padding:11px 12px;border-radius:10px;font-size:.88rem;font-weight:500;
+  transition:background .25s;
+}
+.tweaks__opt:hover{background:rgba(244,239,230,.08)}
+.tweaks__opt i{
+  font-style:normal;font-size:.66rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--red);background:rgba(200,16,46,.18);padding:3px 9px;border-radius:99px;
+}
+.tweaks__opt[aria-pressed="true"] i{background:var(--red);color:#fff}
+
+/* ───────── TWEAK STATES ───────── */
+html[data-scale="s"]{font-size:15px}
+html[data-scale="l"]{font-size:17.5px}
+html[data-photo="duotone"] .hero__photo img,
+html[data-photo="duotone"] .about__photo img,
+html[data-photo="duotone"] .gcard__img img{
+  filter:grayscale(1) contrast(1.08) brightness(.97) sepia(.3) hue-rotate(-12deg) saturate(1.5);
+}
+html.motion-off *,html.motion-off *::before,html.motion-off *::after{
+  animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;
+}
+
+/* ───────── CONTAINER QUERIES ───────── */
+.svc-index{container-type:inline-size;container-name:svcindex}
+@container svcindex (max-width:560px){
+  .svc-index a{grid-template-columns:44px 1fr;gap:4px 16px}
+  .svc-index__tag{display:none}
+  .svc-index__desc{grid-column:2}
+  .svc-index__arrow{display:none}
+}
+
+/* ───────── TO TOP (left, clears tweaks) ───────── */
+.to-top{left:24px;right:auto}
